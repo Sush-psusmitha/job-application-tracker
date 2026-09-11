@@ -1,0 +1,5 @@
+ npx shadcn@latest - collection of ready-made UI components, 
+ npx shadcn@latest add button - like this command we can add components
+
+ npm i lucide-react - Used to import icon in nextjs
+
