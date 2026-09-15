@@ -1,6 +1,7 @@
 import { Briefcase } from "lucide-react";
 
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 export default function Navbar(){
     return (
@@ -12,12 +13,12 @@ export default function Navbar(){
                 <Briefcase/>
                 <h1>Job  Tracker</h1> 
                 </Link>
-                <nav className="hidden md:flex items-center gap-4 ml-auto">
+                <nav className="flex items-center gap-6 px-4 ml-auto">
                     <Link href="/sign-in" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                        Sign In
+                        Login
                     </Link>
-                    <Link href="/sign-up" className="text-sm font-medium text-primary transition-colors">
-                        Sign Up
+                    <Link href="/sign-up" >
+                      <Button className="text-sm font-medium text-white transition-colors"> Start for free </Button> 
                     </Link>
                 </nav>
             </div>
