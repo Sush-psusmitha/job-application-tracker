@@ -25,7 +25,6 @@ export default function Home() {
      <ImagesTabs/>
 
      {/* Features Section */}
-
       <section className="border-t bg-white py-24">
           <div className="container mx-auto px-4">
             <div className="grid gap-12 md:grid-cols-3">
