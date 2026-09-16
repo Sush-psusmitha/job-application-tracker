@@ -3,3 +3,14 @@
 
  npm i lucide-react - Used to import icon in nextjs
 
+
+email
+: 
+"sushsusmitha13@gmail.com"
+name
+: 
+"Susmitha Sush 13"
+password
+: 
+"1111111111"
+

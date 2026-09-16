@@ -18,29 +18,29 @@ export default function SignUp() {
  
     const router = useRouter();
 
-    async function handleSubmit(e: React.FocusEvent){
-     e.preventDefault(); 
-     setLoading(true);
-     setError("");
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault(); 
+        setLoading(true);
+        setError("");
 
-     try{
-
-      const result = await signUp.email({
-            name,email,password
-        });
-        if(result.error){
-              setError(result.error.message ?? "Failed to create account");
-        }else{
-router.push("/dashboard");
-// router.refresh();
+        try {
+            const result = await signUp.email({
+                name,
+                email,
+                password
+            });
+            if (result.error) {
+                setError(result.error.message ?? "Failed to create account");
+                setLoading(false);
+            } else {
+                router.push("/dashboard");
+            }
+        } catch (err) {
+            setError("An unexpected error occurred");
+            setLoading(false);
         }
-        
-     }catch(err){
-        setError("An unexpectted error occured");
-        setLoading(false);
-     }
     }
-    return <div className="flex min-h-[calc(100vh -4rem)] items-center justify-center bg-white p-4">
+    return <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center bg-white p-4">
 
         <Card className="w-full max-w-md border-gray-200 shadow-lg">
             <CardHeader>
@@ -55,8 +55,8 @@ router.push("/dashboard");
                 <CardContent className="space-y-4">
 
                 {error && (
-                    <div className="rounded-md bg-desctructive/15 p-3 text-sm text-destructive border border-desctructive">
-{error}
+                    <div className="rounded-md bg-destructive/15 p-3 text-sm text-destructive border border-destructive">
+                        {error}
                     </div>
                 )}
 
